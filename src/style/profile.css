@@ -22,7 +22,7 @@ body{
     --color-red: red;
 
     --card-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    --card-box-shadow-2: 0 7px 25px rgba(0, 0, 0, 0.08);
+    --card-box-shadow-2: 0 7px 25px rgba(0, 0, 0, 0.155);
     --card-box-shadow-white: rgba(234, 229, 229, 0.749) 1.95px 1.95px 2.6px;
 }
 
