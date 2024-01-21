@@ -1,0 +1,466 @@
+/* global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    font-size: 15px;
+    background-color: var(--color-white);
+}
+
+:root{
+    --color-white: #fff;
+    --color-grey: #ececec;
+    --color-black: #000;
+    --color-blue: #2a2185;
+    --color-grey-text: #797979;
+    --color-dark-grey: #05364d;
+    --background-color: #eef0f5;
+
+    --card-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --card-box-shadow-2: 0 7px 25px rgba(0, 0, 0, 0.427);
+}
+
+a{
+    text-decoration: none;
+}
+
+/* start to navigation */
+.navigation{
+    width: 300px;
+    height: 100vh;
+    background-color: var(--color-blue);
+    position: fixed;
+    transition: all 300ms ease;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 80px;
+}
+
+.nav__brand{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.nav__brand .nav__logo{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.nav__brand .nav__logo i{
+    display: none;
+}
+
+.navigation.active .nav__brand .nav__logo h2{
+    display: none;
+}
+
+.navigation.active .nav__brand .nav__logo i{
+    display: block;
+    color: var(--color-white);
+    margin-left: 10px;
+    font-size: 2rem;
+}
+
+.nav__brand .back__item{
+    font-size: 2.5rem;
+    transform: rotate(45deg);
+    margin-top: -3px;
+    color: var(--color-white);
+    display: none;
+    cursor: pointer;
+}
+
+.navigation .nav__menu ul{
+    position: relative;
+    top: 0;
+    left: 10px;
+    list-style: none;    
+}
+
+.navigation .nav__menu ul li{
+    height: 60px;
+    width: calc(100% - 10px);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: all 300ms ease;
+    position: relative;
+}
+
+.navigation .nav__menu ul li:hover{
+    margin-left: 15px;
+}
+
+.navigation .nav__menu ul li.active{
+    background-color: var(--color-white);
+}
+
+.navigation .nav__menu ul li.active a{
+    color: var(--color-blue);
+}
+
+.navigation .nav__menu ul li.active{
+    margin-left: 0;
+}
+
+.navigation.active .nav__menu ul li a .title{
+    display: none;
+}
+
+.navigation.active .nav__menu ul li a .icon{
+    margin-left: 20px;
+    font-size: 1.8rem;
+}
+
+.navigation .nav__menu ul li a{
+    color: var(--color-white);
+}
+
+.navigation .nav__menu ul li a .icon{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    float: left;
+    font-size: 1.75rem;
+}
+
+.navigation .nav__menu ul li a .title{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    left: 15px;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.navigation .nav__menu ul li.active a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--color-white);
+    pointer-events: none;
+}
+
+.navigation .nav__menu ul li.active a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--color-white);
+    pointer-events: none;
+}
+
+.navigation .logout{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 40px;
+    transition: all 300ms ease;
+}
+
+.navigation .logout:hover{
+    margin-left: 15px;
+}
+
+.navigation .logout a .icon{
+    color: red;
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    float: left;
+    font-size: 1.75rem;
+}
+
+.navigation .logout a .title{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    left: 20px;
+    font-size: 1.4rem;
+    color: red;
+}
+
+.navigation.active .logout a .title{
+    display: none;
+}
+
+.navigation.active .logout a .icon{
+    margin-left: 25px;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* top Bar section */
+.top__bar{
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    height: 60px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--card-box-shadow);
+    background-color: var(--color-white);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    transition: all 300ms ease;
+}
+
+.top__bar.active{
+    width: calc(100% - 80px);
+    margin-left: 80px;
+}
+
+.top__bar .hamburger{
+    width: 60px;
+    height: 50px;
+    /* background-color: var(--color-grey); */
+    position: relative;
+    padding: 10px;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.top__bar .hamburger > div{
+    height: 4.8px;
+    width: 100%;
+    background-color: var(--color-black);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 300ms ease;
+}
+
+.top__bar .search input{
+    margin-top: 4px;
+    width: 380px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1px solid var(--color-grey-text);
+}
+
+.top__bar .porfile{
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    border: 1px solid var(--color-blue);
+    border-radius: 50%;
+}
+
+.top__bar .porfile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.top__bar .porfile .view{
+    width: 200px;
+    padding: 10px 5px;
+    background-color: var(--color-white);
+    z-index: 2;
+    margin-left: -140px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--color-grey-text);
+    box-shadow: var(--card-box-shadow);
+    display: none;
+    transition: all 300ms ease;
+    word-wrap: break-word;
+}
+
+.top__bar .porfile .view h1{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-blue);
+}
+
+.top__bar .porfile:hover .view{
+    display: block;
+}
+
+/* iframe style */
+.for-iframes{
+    position: relative;
+    height: calc(100vh - 60px);
+    transition: all 300ms ease;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: block;
+}
+
+.for-iframes.active{
+    width: calc(100% - 80px);
+    margin-left: 80px;
+}
+
+.for-iframes iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    border: none;
+}
+
+.for-iframes iframe.active{
+    display: block;
+}
+
+
+/* Media screen */
+@media only screen and (max-width: 1200px){
+    .navigation{
+        width: 80px;
+        border: none;
+    }
+
+    .navigation.active{
+        width: 300px;
+    }
+
+    .navigation.active .nav__brand .nav__logo h2{
+        display: block;
+    }
+
+    .navigation .nav__brand .nav__logo h2{
+        display: none;
+    }
+
+    .navigation.active .nav__brand .nav__logo i{
+        display: none;
+    }
+
+    .navigation .nav__brand .nav__logo i{
+        display: block;
+        margin-left: 10px;
+        font-size: 1.8rem;
+    }
+
+    .navigation.active .nav__menu ul li a .title{
+        display: block;
+        position: relative;
+        top: 15px;
+    }
+
+    .navigation .nav__menu ul li a .title{
+        display: none;
+    }
+
+    .navigation .nav__menu ul li a .icon{
+        margin-left: 15px;
+    }
+
+    .top__bar{
+        width: calc(100% - 80px);
+        margin-left: 80px;
+    }
+
+    .top__bar.active{
+        width: calc(100% - 300px);
+        margin-left: 300px;
+    }
+
+    .for-iframes{
+        width: calc(100% - 80px);
+        margin-left: 80px;
+    }
+
+    .for-iframes.active{
+        width: calc(100% - 300px);
+        margin-left: 300px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .navigation{
+        position: fixed;
+        left: -100vw;
+        width: 300px;
+        max-width: 100vw;
+        z-index: 3;
+    }
+
+    .navigation.active{
+        left: 0;
+    }
+
+    .nav__brand .back__item{
+        display: block;
+    }
+
+    .navigation.active .nav__menu ul li a .icon{
+        margin-left: 0;
+    }
+
+    .top__bar{
+        position: sticky;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        margin-left: 0;
+        transition: none;
+    }
+
+    .top__bar.active{
+        min-width: 100vw;
+        margin-left: 0;
+    }
+
+    .for-iframes{
+        position: relative;
+        width: 100vw;
+        margin-left: 0;
+    }
+    
+    .for-iframes.active{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .top__bar{
+        padding: 5px;
+    }
+
+    .top__bar .search input{
+        width: 300px;
+        max-width: 50vw;
+    }
+}

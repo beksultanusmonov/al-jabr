@@ -1,0 +1,452 @@
+/* global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    font-size: 15px;
+}
+
+:root{
+    --color-white: #fff;
+    --color-grey: #ececec;
+    --color-black: #000;
+    --color-blue: #2a2185;
+    --color-grey-text: #797979;
+    --color-dark-grey: #05364d;
+    --background-color: #eef0f5;
+
+    --card-box-shadow: rgba(0, 0, 0, 0.283) 1.95px 1.95px 2.6px;
+    --card-box-shadow-2: 0 7px 25px rgba(0, 0, 0, 0.427);
+    --card-box-shadow-white: rgba(234, 229, 229, 0.749) 1.95px 1.95px 2.6px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.bg-red{
+    background-color: var(--color-red) !important;
+}
+
+.succes_m{
+    position: relative;
+    display: block;
+    width: 98%;
+    margin: 5px auto;
+    padding: 10px 15px;
+    background-color: rgb(34, 103, 53);
+    border-radius: 10px;
+    color: var(--color-white);
+}
+
+.succes_m p{
+    font-size: 1.3rem;
+}
+
+.succes_m i{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* start for table */
+.for-table{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}    
+
+.for-table .card{
+    box-shadow: var(--card-box-shadow-2);
+    padding: 20px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin-bottom: 10px;
+}
+
+.for-table .card .title{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.for-table .card button{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 13px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    border: none;
+    box-shadow: var(--card-box-shadow);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.for-table .card:hover{
+    background-color: var(--color-blue);
+}
+
+.for-table .card:hover .title{
+    color: var(--color-white)
+}
+
+.for-table .card:hover button{
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    box-shadow: var(--card-box-shadow-white);
+}
+
+/* start table section */
+.table{
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    position: relative;
+}
+
+.table .tables {
+    padding: 0 20px 20px;
+    border-radius: 15px;
+    box-shadow: var(--card-box-shadow-2);
+}
+
+
+.table .tables table{
+    width: 100%;
+    border-collapse: collapse;  
+}
+
+.table .tables table thead tr td{
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.table .tables table tbody tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table .tables table tbody tr:last-child{
+    border-bottom: none;
+}
+
+.table .tables table tbody tr td{
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.table .tables table tbody tr td span{
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+
+/* table html */
+.top-bar{
+    width: 100%;
+    height: 50px;
+    padding: 1px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.top-bar a{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: var(--card-box-shadow);
+    background-color: var(--color-blue);
+}
+
+.top-bar a i{
+    width: 100%;
+    height: 100%;
+    padding-top: 3px;
+    font-size: 2rem;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 4px;
+    color: var(--color-white);
+}
+
+.top-bar .title{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: block;
+    height: 100%;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 10px;
+    word-wrap: break-word;
+    color: var(--color-blue);
+}
+
+
+/* table form */
+.table-form{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px 10px;
+    margin-top: 20px;
+}
+
+.table-form .tables{
+    padding: 0 20px 20px;
+    border-radius: 15px;
+    box-shadow: var(--card-box-shadow-2);
+}
+
+.table-form .tables table{
+    width: 100%;
+    border-collapse: collapse;   
+}
+
+.table-form .tables table tbody tr{
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.table-form .tables table tbody tr:hover{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+.table-form .tables table thead tr td{
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.table-form .tables table tbody tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table-form .tables table tbody tr:last-child{
+    border-bottom: none;
+}
+
+.table-form .tables table tbody tr td{
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.table-form .tables table tbody tr td:last-child{
+    color: var(--color-blue);
+    font-weight: 700;
+}
+
+.table-form .tables table tbody tr:hover td:last-child{
+    color: var(--color-white);
+}
+
+/* create section */
+.create{
+    padding: 20px 10px;
+}
+
+.create .tables{
+    padding: 0 20px 20px;
+    border-radius: 15px;
+    box-shadow: var(--card-box-shadow-2);
+}
+
+.create .tables .title{
+    padding-top: 10px;
+    color: var(--color-blue);
+    text-transform: uppercase;
+}
+
+.create .tables table{
+    width: 100%;
+    border-collapse: collapse;   
+}
+
+.create .tables table tbody tr{
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.create .tables table thead tr td{
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.create .tables table tbody tr td{
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.create .tables table tbody tr td input{
+    width: 90%;
+    height: 45px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+}
+
+.create .tables button{
+    display: inline-block;
+    padding: 10px 20px;
+    min-width: 200px;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* edit section */
+.edit{
+    padding: 20px 10px;
+    display: block;
+}
+
+.edit.active{
+    display: block;
+}
+
+.edit .tables{
+    padding: 0 20px 20px;
+    border-radius: 15px;
+    box-shadow: var(--card-box-shadow-2);
+}
+
+.edit .tables .buttons{
+    padding: 5px 0;
+}
+
+
+.edit .tables .title{
+    padding-top: 10px;
+    color: var(--color-blue);
+    text-transform: uppercase;
+}
+
+.edit .tables table{
+    width: 100%;
+    border-collapse: collapse;   
+}
+
+.edit .tables table tbody tr{
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.edit .tables table thead tr td{
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.edit .tables table tbody tr td{
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.edit .tables table tbody tr td input{
+    width: 90%;
+    height: 45px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+}
+
+.edit .tables button{
+    display: inline-block;
+    padding: 10px 20px;
+    min-width: 200px;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.edit .tables button#cancel{
+    background-color: red;
+}
+
+
+
+
+
+/* media query */
+@media only screen and (max-width: 992px){
+    .for-table{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .create .tables{
+        max-width: 100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .create .tables table{
+        width: 992px;
+    }
+    
+    .edit .tables{
+        max-width: 100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .edit .tables table{
+        width: 992px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .for-table{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edit .tables .buttons{
+        width: 768px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .table .tables{
+        max-width: 100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .table .tables table{
+        width: 650px;
+    }
+    
+    .table-form .tables{
+        max-width: 100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .table-form .tables table{
+        width: 650px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .for-table{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

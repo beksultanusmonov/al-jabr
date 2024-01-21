@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Result</title>
+    <link rel="stylesheet" href="style/testresult.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <!-- search section  -->
+    <section class="search">
+        <input type="text" placeholder="Izlash..." id="table_search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </section>
+    <!-- /search section  -->
+    <!-- all test result -->
+    <!-- add user -->
+    <section class="add_user">
+        <div class="tables">
+            <h1>Yangi test kiritish</h1>
+            <form action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Sana</td>
+                            <td>Ism</td>
+                            <td>Guruh</td>
+                            <td>Ball</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Sana kiriting.." required>
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Ism kiriting.." required>
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Guruh kiriting.." required>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="Ball kiriting.." required>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Kiritish</button>
+            </form>
+        </div>
+    </section>
+    <!-- /add user -->
+
+    <div class="succes_m">
+        <p>Bazaga saqlandi!</p>
+        <i class="fa-solid fa-xmark" id="back"></i>
+    </div>
+
+    <!-- edit user -->
+    <section class="edit_user">
+        <div class="tables">
+            <h1 class="red">Malumotni Tahrirlash</h1>
+            <form action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Sana</td>
+                            <td>Ism</td>
+                            <td>Guruh</td>
+                            <td>Ball</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" id="sana" placeholder="Sana kiriting.." value="10.01.2023" required>
+                            </td>
+                            <td>
+                                <input type="text" id="ism" placeholder="Ism kiriting.." value="Usmonov Beksulton" required>
+                            </td>
+                            <td>
+                                <input type="text" id="guruh" placeholder="Guruh kiriting.." value="1-Guruh M" required>
+                            </td>
+                            <td>
+                                <input type="number" id="ball" placeholder="Ball kiriting.." value="24" required>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Tahrirlash</button>
+                <button type="submit" id="cancel" class="bg-red">Bekor qilish</button>
+                <button type="submit" class="bg-red">O'chirib tashlash</button>
+            </form>
+        </div>
+    </section>
+    <!-- /edit user -->
+
+
+    <!-- Test result table -->
+
+    <section class="testresult">
+        <div class="tables">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <td>Sana</td>
+                        <td>Ism</td>
+                        <td>Guruh</td>
+                        <td>Ball</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Beksulton Usmonov </th>
+                        <td>1-Guruh M</td>
+                        <td>26</td>
+                        <td id="edt">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Og'abek Abdumutalibov </th>
+                        <td>1-Guruh M</td>
+                        <td>24</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Abdulaziz Abdulajonov </th>
+                        <td>1-Guruh M</td>
+                        <td>25</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Javohir Mamatov </th>
+                        <td>1-Guruh M</td>
+                        <td>24</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Nusratbek Badriddinov </th>
+                        <td>1-Guruh M</td>
+                        <td>27</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Musulmon Toxtamamatov </th>
+                        <td>1-Guruh M</td>
+                        <td>30</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Jonpo'lat Esonboyev </th>
+                        <td>1-Guruh M</td>
+                        <td>10</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Muxlisa Toshpolotova </th>
+                        <td>1-Guruh M</td>
+                        <td>15</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>O'giloy Usmonova </th>
+                        <td>1-Guruh M</td>
+                        <td>18</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2024</td>
+                        <th>Xusanboy Ashurov </th>
+                        <td>1-Guruh M</td>
+                        <td>20</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.01.2024</td>
+                        <th>Nusratbek Badriddinov </th>
+                        <td>1-Guruh M</td>
+                        <td>21</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- /Test result table -->
+
+
+    <!-- js -->
+    <script>
+        let editForm = document.querySelector(".edit_user"),
+            editBtn = document.getElementById("edt"),
+            cancelBtn = document.querySelector(".edit_user .tables button#cancel");
+
+
+        editBtn.onclick = () => {
+            editForm.classList.add("active");
+        }
+
+        cancelBtn.onclick = () => {
+            editForm.classList.remove("active");
+        }
+
+        const searchInput = document.getElementById("table_search"),
+            rows = document.querySelectorAll(".testresult .tables table tbody tr");
+
+        searchInput.addEventListener("keyup", event => {
+            const q = event.target.value.toLocaleLowerCase();
+            rows.forEach(row => {
+                row.querySelector("th").textContent.toLocaleLowerCase().startsWith(q) 
+                ? (row.style.display = "") 
+                : (row.style.display = "none");
+            })
+        })
+
+        const back = document.getElementById('back'),
+            succesMessages = document.querySelector(".succes_m");
+        back.onclick = () => {
+            succesMessages.style.display = 'none';
+        }
+
+         
+    </script>
+</body>
+
+</html>

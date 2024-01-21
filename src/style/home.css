@@ -1,0 +1,547 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, "sanf-serif";
+}
+
+body{
+    font-size: 15px;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+:root{
+    --color-white: #fff;
+    --color-grey: #ececec;
+    --color-black: #000;
+    --color-blue: #2a2185;
+    --color-grey-text: #797979;
+    --color-dark-grey: #05364d;
+    --background-color: #eef0f5;
+
+    --card-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --card-box-shadow-2: 0 7px 25px rgba(0, 0, 0, 0.427);
+    --navbar-box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    max-width: 1300px;
+    border: 1px solid red;
+    margin: 0 auto;
+    padding: 0 0 20px;
+}
+
+.background-clip{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+/* start to tob bar */
+.top_bar{
+    width: 98%;
+    height: 70px;
+    background-color: var(--color-white);
+    box-shadow: var(--navbar-box-shadow);
+    position: sticky;
+    top: 5px;
+    left: 0;
+    z-index: 10;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 300ms ease;
+}
+
+.top_bar .container{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+}
+
+.top_bar .container .brand_logo img{
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    float: left;
+}
+
+.top_bar .container .brand_logo .name{
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 5px;
+    color: var(--color-blue);
+}
+
+.top_bar .container .menu{
+    padding-top: 10px;
+    transition: all 300ms ease;
+}
+
+.top_bar .container .menu ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.top_bar .container .menu ul a li{
+    color: var(--color-blue);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 300ms ease;
+}
+
+.top_bar .container .menu ul a li.active{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+.top_bar .container .menu ul a:hover li{
+    margin-top: -10px;
+}   
+
+.top_bar .container .hamburger{
+    width: 60px;
+    height: 60px;
+    background: #f7f6f686;
+    margin-top: 5px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.top_bar .container .hamburger i{
+    font-size: 2.8rem;
+}
+
+
+.top_bar .vertical_menu{
+    width: 300px;
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+    top: -70px;
+    background-color: var(--color-white);
+    transition: all 400ms ease;
+    left: -350px;
+}
+
+.top_bar .vertical_menu.active{
+    left: 0;
+}
+
+.top_bar .vertical_menu .brand_logo{
+    box-shadow: var(--navbar-box-shadow);
+}
+
+.top_bar .vertical_menu .brand_logo img{
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    float: left;
+}
+
+.top_bar .vertical_menu .brand_logo .name{
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 5px;
+    color: var(--color-blue);
+}
+
+.top_bar .vertical_menu .menu{
+    margin-top: 20px;
+}
+
+.top_bar .vertical_menu .menu ul a li{
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    color: var(--color-blue);
+    width: 98%;
+    margin: 10px auto;
+}
+
+.top_bar .vertical_menu .menu ul a li.active{
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    border-radius: 8px;
+}
+
+.top_bar .vertical_menu .back{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 8px 5px;
+    box-shadow: 3px 3px 5px 3px #a7a6a6;
+}
+
+.top_bar .vertical_menu .back i{
+    font-size: 2.5rem;
+    color: var(--color-blue);
+}
+
+
+/* start to interface section */
+.interface{
+    border: 1px solid rgb(57, 61, 57);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 5px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    position: relative;
+    display: none;
+}
+
+.interface.active{
+    display: grid;
+}
+
+.interface .left{
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.interface .left .welcome h3{
+    letter-spacing: 2px;
+    color: var(--color-grey-text);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.interface .left .title h1{
+    margin-top: 10px;
+    font-size: 3rem;
+    color: var(--color-white);
+    letter-spacing: 5px;
+}
+
+.interface .left .description p{
+    color: #ddd9d9;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.interface .button{
+    margin: 20px 0;
+}
+
+.interface .button button{
+    min-width: 100px;
+    padding: 15px 20px;
+    font-size: 2rem;
+    background: linear-gradient(90deg, rgba(9,9,121,1) 2%, rgba(31,35,143,1) 45%, rgba(50,53,156,1) 98%);
+    border: none;
+    color: var(--color-white);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.interface .right{
+    width: 100%;
+    height: auto;
+}
+
+.interface .right img{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(112, 110, 110, 0.635);
+}
+
+/* start register section */
+.register{
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgb(57, 61, 57);
+    gap: 10px;
+    position: relative;
+}
+
+.register.active{
+    display: grid;
+}
+
+.register .left{
+    width: 100%;
+    height: auto;
+}
+
+.register .left img{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(112, 110, 110, 0.635);
+}
+
+.register .right{
+    margin-top: 100px;
+}
+
+.register .right .title h1{
+    font-size: 3rem;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.register .right .description{
+    color: var(--color-white);
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+.register .right .button{
+    margin: 20px 0;
+}
+
+.register .right .button a button{
+    min-width: 100px;
+    padding: 15px 20px;
+    font-size: 2rem;
+    background: linear-gradient(90deg, rgba(9,9,121,1) 2%, rgba(31,35,143,1) 45%, rgba(50,53,156,1) 98%);
+    border: none;
+    color: var(--color-white);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* start to contact section */
+.contact{
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgb(57, 61, 57);
+    gap: 10px;
+    position: relative;
+}
+
+.contact.active{
+    display: grid;
+}
+
+.contact .left{
+    margin-top: 50px;
+}
+
+.contact .left .card{
+   padding: 10px 15px;
+   border-radius: 20px;
+   border: 1px solid #fff;
+   margin: 10px 0; 
+}
+
+.contact .left .card p{
+    font-size: 3rem;
+    color: var(--color-white);
+}
+
+.contact .left .card a p{
+    color: var(--color-blue);
+    text-transform: capitalize;
+}
+
+.contact .right{
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1200px){
+    .interface{
+        width: 98vw;
+        top: -50px;
+    }
+    
+    .register{
+        width: 98vw;
+        top: -50px;
+    }
+    
+    .contact{
+        width: 98vw;
+        top: -50px;
+    }
+
+    .interface .left{
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .interface{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .register{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact .left .card p{
+        font-size: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .top_bar .container .hamburger{
+        display: block;
+    }
+
+    .top_bar .container .menu{
+        display: none;
+    }
+
+    .register .right{
+        margin-top: 0;
+    }
+
+    .contact{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact .left{
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .interface .left .description p{
+        font-size: 1.2rem;
+    }
+    
+    .interface .left .button button{
+        font-size: 1.5rem;
+    }
+
+    .interface .left{
+        margin-left: 0;
+    }
+
+    .register .left{
+        height: 400px;
+    }
+
+    .register .left img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .register .right .title h1{
+        font-size: 2.5rem;
+    }
+
+    .register .right .description p{
+        font-size: 1.8rem;
+    }
+
+    .contact .left{
+        margin-top: 0px;
+    }
+
+    .contact .left .card{
+        max-width: 98vw;
+    }
+
+    .contact .right{
+        max-width: 98vw;
+    }
+
+    .contact .right img{
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .top_bar .container .brand_logo .name{
+        font-size: 2.4rem;
+        margin-top: 12px;
+    }
+
+    .top_bar .container .brand_logo img{
+        width: 55px;
+        height: 55px;
+        margin-top: 10px;
+    }
+
+    .top_bar .container{
+        padding: 0 5px;
+    }
+
+    .top_bar .container .hamburger{
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    .top_bar .container .hamburger i{
+        font-size: 2.3rem;
+    }
+
+    .register .right .title h1{
+        font-size: 2rem;
+    }
+
+    .register .right .description p{
+        font-size: 1.5rem;
+    }
+
+    .register .left{
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    .top_bar .container .brand_logo .name{
+        font-size: 2rem;
+        margin-top: 18px;
+    }
+}
+
+@media (min-aspect-ratio:16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}

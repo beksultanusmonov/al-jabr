@@ -1,0 +1,159 @@
+/* global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    font-size: 15px;
+}
+
+:root{
+    --color-white: #fff;
+    --color-grey: #ececec;
+    --color-black: #000;
+    --color-blue: #2a2185;
+    --color-grey-text: #797979;
+    --color-dark-grey: #05364d;
+    --background-color: #eef0f5;
+
+    --card-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --card-box-shadow-2: 0 7px 25px rgba(0, 0, 0, 0.427);
+}
+
+a{
+    text-decoration: none;
+}
+
+/* start statistics section */
+.statistics{
+    position: relative;
+    margin-top: 20px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-height: 165px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 300ms ease;
+}
+
+.statistics.active{
+    max-height: none;
+}
+
+.statistics .card{
+    box-shadow: var(--card-box-shadow-2);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;  
+    cursor: pointer;
+}
+
+.statistics .card:hover{
+    background-color: var(--color-blue);
+}
+
+
+.statistics .card:hover .Number,
+.statistics .card:hover .title,
+.statistics .card:hover .small{
+    color: var(--color-white);
+}
+
+.statistics .card .Number{
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-blue);
+}
+
+.statistics .card .title{
+    margin-top: 10px;
+    color: var(--color-grey-text);
+    font-size: 1.4rem;
+}
+
+.statistics .card .small{
+    font-size: 1.1rem;
+}
+
+.show{
+    position: relative;
+    height: 50px;
+}
+
+.show > button{
+    position: absolute;
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    right: 10px;
+    background-color: var(--color-blue);
+    border-radius: 25px;
+    color: var(--color-white);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.show #hide{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query */
+@media screen and (max-width: 992px) {
+    .statistics{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .statistics{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .statistics{
+        max-height: 130px;
+        gap: 15px;
+    }
+
+    .statistics .card .Number{
+        font-size: 1.8rem;
+    }
+
+    .statistics .card .title{
+        font-size: 1rem;
+    }
+
+    .show > button{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 410px){
+    .statistics{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
